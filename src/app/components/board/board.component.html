@@ -1,11 +1,11 @@
 <div id="board-container">
-    <div id="0" [class.player]="squares[0] == this.playerValue" [class.computer]="squares[0] == this.computerValue" (click)="squareSelected($event)">{{squares[0]}}</div>
-    <div id="1" [class.player]="squares[1] == this.playerValue" [class.computer]="squares[1] == this.computerValue" (click)="squareSelected($event)">{{squares[1]}}</div>
-    <div id="2" [class.player]="squares[2] == this.playerValue" [class.computer]="squares[2] == this.computerValue" (click)="squareSelected($event)">{{squares[2]}}</div>
-    <div id="3" [class.player]="squares[3] == this.playerValue" [class.computer]="squares[3] == this.computerValue" (click)="squareSelected($event)">{{squares[3]}}</div>
-    <div id="4" [class.player]="squares[4] == this.playerValue" [class.computer]="squares[4] == this.computerValue" (click)="squareSelected($event)">{{squares[4]}}</div>
-    <div id="5" [class.player]="squares[5] == this.playerValue" [class.computer]="squares[5] == this.computerValue" (click)="squareSelected($event)">{{squares[5]}}</div>
-    <div id="6" [class.player]="squares[6] == this.playerValue" [class.computer]="squares[6] == this.computerValue" (click)="squareSelected($event)">{{squares[6]}}</div>
-    <div id="7" [class.player]="squares[7] == this.playerValue" [class.computer]="squares[7] == this.computerValue" (click)="squareSelected($event)">{{squares[7]}}</div>
-    <div id="8" [class.player]="squares[8] == this.playerValue" [class.computer]="squares[8] == this.computerValue" (click)="squareSelected($event)">{{squares[8]}}</div>
+    <div id="0" [ngStyle]="{'background-color': squaresColor[0]}" (click)="squareSelected($event)">{{squares[0]}}</div>
+    <div id="1" [ngStyle]="{'background-color': squaresColor[1]}" (click)="squareSelected($event)">{{squares[1]}}</div>
+    <div id="2" [ngStyle]="{'background-color': squaresColor[2]}" (click)="squareSelected($event)">{{squares[2]}}</div>
+    <div id="3" [ngStyle]="{'background-color': squaresColor[3]}" (click)="squareSelected($event)">{{squares[3]}}</div>
+    <div id="4" [ngStyle]="{'background-color': squaresColor[4]}" (click)="squareSelected($event)">{{squares[4]}}</div>
+    <div id="5" [ngStyle]="{'background-color': squaresColor[5]}" (click)="squareSelected($event)">{{squares[5]}}</div>
+    <div id="6" [ngStyle]="{'background-color': squaresColor[6]}" (click)="squareSelected($event)">{{squares[6]}}</div>
+    <div id="7" [ngStyle]="{'background-color': squaresColor[7]}" (click)="squareSelected($event)">{{squares[7]}}</div>
+    <div id="8" [ngStyle]="{'background-color': squaresColor[8]}" (click)="squareSelected($event)">{{squares[8]}}</div>
 </div>

@@ -1,0 +1,11 @@
+* {
+    margin-bottom: 2vh;
+}
+
+button {
+    background-color: #285cc4;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}

@@ -12,13 +12,5 @@
     justify-content: center;
     text-align: center;
     border: 0.3px solid #3B4D6F;
-    background-color: #285cc4;
-}
-
-.player {
-    background-color: #27C42A !important;
-}
-
-.computer {
-    background-color: #C42771 !important;
+    border-radius: 10px;
 }

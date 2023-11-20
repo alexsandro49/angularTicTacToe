@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { BoardComponent } from './components/board/board.component';
 import { ScoreBoardComponent } from './components/score-board/score-board.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -12,5 +13,5 @@ import { ScoreBoardComponent } from './components/score-board/score-board.compon
   imports: [CommonModule, RouterOutlet, BoardComponent, ScoreBoardComponent],
 })
 export class AppComponent {
-  title = 'angularTicTacToe';
+  title: string = 'angularTicTacToe';
 }
