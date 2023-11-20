@@ -23,34 +23,23 @@ export class BoardComponent implements OnInit {
     '#285cc4',
     '#285cc4',
   ];
-  isPlayer: boolean = true;
+  isPlayer!: boolean;
   playerValue!: string;
   computerValue!: string;
   color1!: string;
   color2!: string;
 
   constructor(private scoreBoardService: ScoreboardService) {
-    if (Math.random() < 0.5) {
-      this.playerValue = 'X';
-      this.computerValue = 'O';
-    } else {
-      this.playerValue = 'O';
-      this.computerValue = 'X';
-    }
-
-    this.color1 = Math.random() < 0.5 ? '#27C42A' : '#C42771';
-    this.color2 = this.color1 == '#27C42A' ? '#C42771' : '#27C42A';
+    this.restart();
   }
 
   ngOnInit(): void {
-    this.scoreBoardService.currentPlayer.next(
-      this.isPlayer ? 'player' : 'computer'
-    );
-
     this.scoreBoardService.restart
       .asObservable()
       .subscribe(() => this.restart());
-    this.scoreBoardService.restart.next(false);
+    if (this.scoreBoardService.restart) {
+      this.scoreBoardService.restart.next(false);
+    }
   }
 
   squareSelected(event: any): void {
@@ -66,17 +55,19 @@ export class BoardComponent implements OnInit {
       this.squaresColor[event.target.id] = this.color2;
     }
 
-    if (
-      this.squares[0] != '' &&
-      this.squares[1] != '' &&
-      this.squares[2] != ''
-    ) {
-      this.scoreBoardService.champion.next('player');
+    if (this.championVerify()) {
+      this.scoreBoardService.champion.next(
+        this.isPlayer ? 'PLAYER' : 'COMPUTER'
+      );
+      return;
+    } else if (this.squares.every((x) => x != '')) {
+      this.scoreBoardService.champion.next('DRAW');
+      return;
     }
 
     this.isPlayer = !this.isPlayer;
     this.scoreBoardService.currentPlayer.next(
-      this.isPlayer ? 'player' : 'computer'
+      this.isPlayer ? 'PLAYER' : 'COMPUTER'
     );
   }
 
@@ -104,5 +95,48 @@ export class BoardComponent implements OnInit {
 
     this.color1 = Math.random() < 0.5 ? '#27C42A' : '#C42771';
     this.color2 = this.color1 == '#27C42A' ? '#C42771' : '#27C42A';
+
+    this.isPlayer = Math.random() < 0.5 ? true : false;
+    this.scoreBoardService.currentPlayer.next(
+      this.isPlayer ? 'PLAYER' : 'COMPUTER'
+    );
+  }
+
+  championVerify(): boolean {
+    for (let i = 0; i < 3; i++) {
+      if (
+        i < 2 &&
+        ((this.squares[2 * i] == this.playerValue &&
+          this.squares[4] == this.playerValue &&
+          this.squares[8 - 2 * i] == this.playerValue) ||
+          (this.squares[2 * i] == this.computerValue &&
+            this.squares[4] == this.computerValue &&
+            this.squares[8 - 2 * i] == this.computerValue))
+      ) {
+        return true;
+      }
+
+      if (
+        (this.squares[3 * i] == this.playerValue &&
+          this.squares[3 * i + 1] == this.playerValue &&
+          this.squares[3 * i + 2] == this.playerValue) ||
+        (this.squares[3 * i] == this.computerValue &&
+          this.squares[3 * i + 1] == this.computerValue &&
+          this.squares[3 * i + 2] == this.computerValue)
+      ) {
+        return true;
+      } else if (
+        (this.squares[i] == this.playerValue &&
+          this.squares[i + 3] == this.playerValue &&
+          this.squares[i + 6] == this.playerValue) ||
+        (this.squares[i] == this.computerValue &&
+          this.squares[i + 3] == this.computerValue &&
+          this.squares[i + 6] == this.computerValue)
+      ) {
+        return true;
+      }
+    }
+
+    return false;
   }
 }

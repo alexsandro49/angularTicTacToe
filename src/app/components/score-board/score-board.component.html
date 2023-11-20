@@ -1,5 +1,5 @@
 <h2>Current: {{ currentPlayer }}</h2>
 <div *ngIf="champion != ''">
-    <p>{{ champion }} won the math</p>
+    <p>{{ champion == 'DRAW' ? 'IT WAS A DRAW': champion + ' WON THE MATCH!' }}</p>
     <button (click)="scoreboardService.onRestart()">RESTART</button>
 </div>

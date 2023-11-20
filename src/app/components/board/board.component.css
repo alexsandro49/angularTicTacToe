@@ -11,6 +11,8 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
     border: 0.3px solid #3B4D6F;
     border-radius: 10px;
 }
