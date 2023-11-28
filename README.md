@@ -1,10 +1,26 @@
 # TicTacToe
-Mini projeto de jogo da velha, feito com Angular, com dois modos de jogo, um para o usuário praticar com a cpu, e outro para dois jogadores. Com o modo de prática tendo um ranking geral de vitórias, disponível na aba RANKING.
+Projeto de jogo da velha, feito com Angular.
 
 ## Como acessar o projeto:
-Clone o repositório da api em sua máquina:
+### Acessando online:
+* [Teste o jogo online](https://alexsandro.github.io/angularTicTacToe/)
+
+### Executando localmente:
+1. Clone o repositório da api em sua máquina:
    ```
-   * [Teste o jogo online](https://alexsandro.github.io/angularTicTacToe/)
+   git clone https://github.com/alexsandro49/angularTicTacToe.git
+   ```
+2. Dentro da pasta do projeto, instale as dependências:
+   ```
+   npm install
+   ```
+3. Faça a instalação do Angular CLI:
+   ```
+   npm install -g @angular/cli
+   ```
+2. Execute o projeto:
+   ```
+   ng serve
    ```
 
 ## Licença
