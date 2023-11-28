@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    width: 70vh;
+    width: 40vw;
     height: 60vh;
 }
 
@@ -11,8 +11,8 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
-    border: 0.3px solid #3B4D6F;
-    border-radius: 10px;
+    border: 0.1em solid #3B4D6F;
+    border-radius: 0.8em;
 }

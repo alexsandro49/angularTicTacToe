@@ -5,7 +5,7 @@
 button {
     background-color: #285cc4;
     color: #ffffff;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 0.8em;
+        border-radius: 0.8em;
     border: none;
 }
