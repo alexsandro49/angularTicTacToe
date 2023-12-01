@@ -3,7 +3,7 @@ Projeto de jogo da velha, feito com Angular.
 
 ## Como acessar o projeto:
 ### Acessando online:
-* [Teste o jogo online](https://alexsandro.github.io/angularTicTacToe/)
+* [Teste o jogo online](https://alexsandro49.github.io/angularTicTacToe/)
 
 ### Executando localmente:
 1. Clone o repositório da api em sua máquina:
